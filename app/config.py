@@ -3,7 +3,9 @@ class Config:
     General configuration parent class. Configurations used in production
     and Development stages.
     '''
-    NEWS_API_BASE_URL ='https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey={}'
+    NEWS_API_BASE_URL ='https://newsapi.org/v2/'
+    NEWS_API_KEY = 'ff056887fb1649ffac3df35a104c1784'
+
     
 
 
