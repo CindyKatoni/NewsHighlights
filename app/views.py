@@ -1,6 +1,6 @@
-from flask import render_template, url_for
+from flask import render_template, url_for, request, redirect
 from app import app
-from .request import get_sources
+from .request import get_sources, get_articles
 
 # Create put index page view function
 # Views
@@ -16,6 +16,7 @@ def index():
     return render_template('index.html', sources = news_sources)
 
 
-@app.route("/article")    
-def article():
-    return render_template('article.html', title='Articles')    
+@app.route('/articles/<source_id>')    
+def articles(source_id):
+    articles = get_articles(source_id)
+    return render_template('articles.html', title = f"{source_id} page", articles = articles)    
